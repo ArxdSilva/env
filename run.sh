@@ -1,3 +1,6 @@
+#!/bin/bash
+
+set -e
 sudo apt-get update
 # install git
 echo "Installing git..."
