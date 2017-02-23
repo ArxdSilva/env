@@ -2,6 +2,10 @@ sudo apt-get update
 # install git
 echo "Installing git..."
 sudo apt-get install git
+# create ssh
+ssh-keygen -t rsa -b 4096 -C "arxdsilva@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add -K ~/.ssh/id_rsa
 
 # install zsh | oh-my-zsh
 echo "Installing zsh | oh-my-zsh..."
