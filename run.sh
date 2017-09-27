@@ -19,13 +19,7 @@ chsh -s `which zsh`
 
 # install go
 echo "Installing go..."
-sudo apt-add-repository ppa:gophers/archive -y
-sudo apt-get update
-sudo apt-get install golang-1.8 -y
-echo -e "export PATH=$PATH:/usr/lib/go-1.8/bin" |  tee -a ~/.bashrc > /dev/null
-export PATH=$PATH:/usr/lib/go-1.8/bin
-echo "Adding GOPATH=$GOPATH to ~/.bashrc"
-export GOPATH=$HOME/go
+curl -LO https://get.golang.org/$(uname)/go_installer && chmod +x go_installer && ./go_installer && rm go_installer
 
 sudo apt-get update
 
