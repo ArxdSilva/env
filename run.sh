@@ -2,9 +2,11 @@
 
 set -e
 sudo apt-get update
+
 # install git
 echo "Installing git..."
 sudo apt-get install git
+
 # create ssh
 ssh-keygen -t rsa -b 4096 -C "arxdsilva@gmail.com"
 eval "$(ssh-agent -s)"
@@ -20,7 +22,6 @@ chsh -s `which zsh`
 # install go
 echo "Installing go..."
 curl -LO https://get.golang.org/$(uname)/go_installer && chmod +x go_installer && ./go_installer && rm go_installer
-
 sudo apt-get update
 
 # install vs code
@@ -31,18 +32,7 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 sudo apt-get update
 sudo apt-get install code # or code-insiders
 
-# install VB
-echo "Installing virtualbox ..."
-sudo apt-get install virtualbox
-sudo apt install virtualbox-ext-pack
-
-# install vagrant
-echo "Installing vagrant ..."
-sudo apt-get install vagrant
-sudo apt-get install virtualbox-dkms
-sudo apt-get update
-
-git config --global core.editor "atom --wait"
+git config --global core.editor "code --wait"
 
 echo "Restarting machine ..."
 sudo shutdown -r 0
